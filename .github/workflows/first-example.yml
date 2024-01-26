@@ -6,11 +6,13 @@ jobs:
   first_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Welcome message1
+      - uses: actions/checkout@v3  # Ensure code is checked out
+
+      - name: Welcome message
         run: echo "My first Github Actions Job"
 
       - name: List files
-        run: ls -la  # Use ls -la to list files in more detail
+        run: ls -la  # Verify existence of README.md
 
       - name: Read file
-        run: cat upendra25312/actions-1/README.md
+        run: cat README.md  # Assuming it's in the root directory
